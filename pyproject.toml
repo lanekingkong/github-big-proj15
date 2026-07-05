@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omniforge"
+version = "1.0.0"
+description = "Universal AI Agent Skill Framework — Forge skills once, use them everywhere"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "lanekingkong", email = "support@omniforge.dev"}
+]
+keywords = [
+    "ai-agent",
+    "skills",
+    "claude-code",
+    "cursor",
+    "codex",
+    "agent-framework",
+    "skill-management",
+    "context-optimization",
+    "memory-system",
+    "design-taste",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml>=6.0",
+    "sqlite-utils>=3.34",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+    "pre-commit>=3.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+chroma = [
+    "chromadb>=0.4",
+]
+qdrant = [
+    "qdrant-client>=1.7",
+]
+all = [
+    "omniforge[dev,chroma,qdrant]",
+]
+
+[project.urls]
+Homepage = "https://github.com/lanekingkong/omniforge"
+Documentation = "https://docs.omniforge.dev"
+Repository = "https://github.com/lanekingkong/omniforge"
+Issues = "https://github.com/lanekingkong/omniforge/issues"
+
+[project.scripts]
+omniforge = "omniforge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["omniforge", "omniforge.*"]
+exclude = ["tests", "tests.*", "docs", "examples"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "C4", "SIM"]
+
+[tool.mypy]
+python_version = "3.8"
+strict = true
+warn_unused_configs = true
+warn_redundant_casts = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["omniforge"]
+omit = ["tests/*", "*.pyi"]
+
+[tool.coverage.report]
+fail_under = 80
