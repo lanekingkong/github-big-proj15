@@ -1,0 +1,8 @@
+{
+  "tests/test_skills/test_registry.py::test_get_skill_by_name": true,
+  "tests/test_skills/test_registry.py::test_search_skills": true,
+  "tests/test_skills/test_registry.py::test_skill_metadata_parsing": true,
+  "tests/test_skills/test_registry.py::test_skill_triggers": true,
+  "tests/test_skills/test_registry.py::test_skill_instructions": true,
+  "tests/test_core/test_engine.py::test_config_creation": true
+}
