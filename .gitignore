@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Local development
+.omniforge/memory/
+*.tmp
+
+# Distribution
+MANIFEST
+
+# Package manager
+Pipfile.lock
+poetry.lock
+
+# OS
+Thumbs.db
+$RECYCLE.BIN/
